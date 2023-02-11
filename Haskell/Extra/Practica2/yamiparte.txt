@@ -1,0 +1,94 @@
+1.¿POR QUÉ? PORQUE SÍ...
+
+--POTENCIA 
+Primero definimos le caso base en donde para toda 'n' potenciada a la 0 su resultado siempre será 1.
+En cuanto al caso recursivo lo definiremos como la multiplicación de 'n' por la potencia de (n*(m-1)), utilizarems el m-1 para poder llegar a la potencia de 'n'
+a la 0 y no caer en un bucle.
+
+--SUMA PARES
+Primero el caso base en el que la suma de los pares anteriores es 0.
+En otro casos llamamos a la función auxiliar de divE para saber si 'n' es par o impar; en caso de ser impar se nos devolverá 'error'. En el caso de ser par se devolverá el valor de la función sumAux.
+
+--sumAux
+Recibirá cuatro enteros. El primero será el número dado por el usuario 'n', el segundo(inicializado en 0) nos servirá para ir guardando el valor de la suma total de los números pares que haya en 'n' , el tercero 'p'(también inicializado en 0) servirá para ayudarnos a tener un paraámetro con el cual determinar cuando salir del recursión, por último 'q' recibirá el valor de 'divE' el cuál nos indica la cantidad de números pares que hay en 'n' y por tanto la cantidad de veces que se debe repetirla iteración(se comparara con 'p').
+
+--divEAux
+Establecemos que el primer número que el usuario nos de debe de ser mayor al segundo, de otra manera el programa soltara error. Posteriormente definimos una funcion recursiva que restara los números y tendremos una contador que nos indicara las veces que esta condición puede suceder. Al final el valor del contador será el que se regrese al usuario.
+
+
+--TRIANGULAR
+Devolvemos el valor de la función triAux.
+
+--triAux
+Recibirá tres enteros, el primero será 'n' y corresponde al valor ingresado por el usuario , el segundo corresponderá al valor total de la suma de los números anteriores a 'n' (inicializado en 0 para garanizar que se sumaran todos los números hasta 'n'), por último recibirá un número 'p' que tendrá la función de un contador que aumentará uno cada que se entre a un nuevo caso recursivo. Para determinar si se entra al caso recursivo se debe comparar que el contador sea mayor que el número ingresado por el usuario.
+
+--FIBO
+Empezamos definiendo que el valor de fibonacci para 0 el cueal siempre será 0 y para 1 que será 1.
+Definimos que el fibonacci para 'n' número será fibonacci de 'n-1' más fibonacci de 'n-2', al restarlo 1 y 2 a 'n' aseguramos que se llegue a fibonacci de 0 o 1 podiendo así ir sustituyendo valores.
+
+--ULTIMO
+Le aplicamos reversa a la lista para que el valor del últiimo elemento ahora sea el de la cabeza, porsteriormente regresamos la cabeza de esta 'nueva' lista.
+--cabeza (utilizasa en último)
+Recibe una lista y nos devuelve el primer elemento de la misma.
+
+--REVERSA
+Toma la cebza de la lista dada y la concatena al final de lista, siendo esa cabeza ahora el rabo de esta 'nueva' lista y el nodo siguiente de la cabeza ahora se actualiza a la cabeza, este proceso se repite hasta que el valor de la cabeza sea el valor del rabo de la lista inicial.
+
+--PERTENECE
+Establecemos que si la lista es vacia sea cual sea el elemento que se ingrese por el usuario la respuesta automática será 'False'.
+Para el caso recursivo utilizamos un if en el que si el valor de 'n' es igual a la cabeza de la lista se regresara 'true', en caso contrario se vuelve a llamar a pertenece pero esta vez la cola y al volver entrar al ciclo ahora el primer elemento de la cola será tomado como el valor de la cabeza.
+
+2.PENSAR CORRECTO ES LO QUE HAGO
+
+--¿PERFECTO, ABUNDANTE O DEFICIENTE?
+Definimos nuestros tipos de datos en perfecto, abundante y deficiente.
+Ahora revisamos que el número ingresado sea mayor que 0, si este es menor o igual regresamos 'erro', en caso contrario mediante un anidasión de 'if' se determina a que caso recursivo se mandara el número 'n'.
+Se define una función llamada facNicomaco, la cual nos ayudara a determinar y nos regresara si 'n' es perfecto, deficiente o abundante.
+--facNicomaco
+Recibe tres enteros y nos regresa uno. El primero será 'n' el ingresado por el usuario, el siguente 'm' nos servirá como contador será el que vaya de 0 hasta 'n' y determine cuando la recursión termine, por último tendremos s 'p' que será donde se guardara el valor de la suma.
+Si nuestro contador 'm' es menor que el número dado 'n' entonces llamaremos a la función facAux2 e incrementaremos 1 a m, en caso contrario devolveremos el valor de p que corresponderá a la suma total de los factores de 'n'.
+--facAux2
+Esta función recibe los valores de 'n', 'm' y 'p' y nos ayudará a determinar en caso tenemos un factor de 'n'.
+Para ello se dividira el valor de 'n' con el valor de 'm', si esta división nos da residuo distinto de 0 regresamos los valores sin ninguna modificación a facNicomaco, en el otro caso  se entrara al siguiente if. Si 'n' es igual a 'm' esto quiere decir que todos los números de 0 hasta 'n' ya se recorrieron y no hay más factores por tanto se regresará a facNicomaco con los valores de las tres variables sin modificación. En el otro caso se regresaría a facNicomaco con 'n' y 'm' teniendo el mismo valor pero agregandole 'm' (uno de los factores de 'n' pues su división dio residuo 0) a 'p'.
+
+--LUHN
+Algo que podemos mencionar es que creamos una funcion para cada paso de luhn, es decir, una funcion para multiplicar, otra para restar y una para sumar toda la lista. A cada funcion llama a otra, asi que las podemos catalogar como funciones auxiliares
+Establecemos que si se recibe una lista vacia tendremos un error y se devolverá la palabra 'no'.
+Posteriormente, si se ingresa una lista no vacia, entramos a la primera funcion auxiliar (luhn), en la cual, comprobamos que el resultado de una de nuestras funciones (luhnMult) sea dividible entre 10. Esto ya que este parametro, al final de usar todas nuestras funciones auxiliares, nos da la suma de todos los elementos de la lista.
+En cuanto entramos a luhnMult (c:cl) [] 1, lo que se hace es comprobar si p es == 1, pues incluimos esta varibale (p) para llevar un control de la lista, debido a que necesitamos que un numero se multiplique y el siguiente no lo haga. Para lograr esto ultimo, cada vez que se llama a la funcion luhnMult, el valor de p es 1 o 0, si es 1 entonces quitamos la cabeza de la lista y esa misma la multiplicamos por 2 y la agremamos a la lista vacia que ingresamos anteriormente (m) y restamos 1 a p para que el siguiente valor de la lista no sea multiplicado, sino, solo agregado a m. Esto se repite con todos los elementos de la lista, hasta que la lista que ingreso el usuario sera una []. Cuando esto sucede, se llama a la funcion de luhnResta con la lista m (donde ya tenemos los valores multiplicados por 2) y una [] para ayudarnos en la siguiente funcion
+En luhnResta, primero comprobamos si el tamano de la lista es diferente a 0, entramos a una secuencia de if anidados, donde comprobamos si la cabeza de la lista es meyor a 9, le restamos nueve y agregamos el resultado a la lista vacia que ingresamos a la hora de invocar a la funcion, asi como eliminar dicha cabeza de la lista original. Si la cabeza no es mayor a 9, solamente la anadimos a la lista nueva y se elimina de la original.
+Llegara un punto en el que la condicion de que si el tamano de la lista no es distinto a 0, se llama a la funcion luhnSuma con (m) como parametro.
+En es esta parte donde haces la suma de todos los elementos de la lista, despues de multiplicar uno si y uno no, asi como de restar -9 si el valor es mayor a 9. Simplemente tomamos la cabeza de la lista y volvemos a llamar a luhnSuma pero ahora con solo la cola de la lista. Esto hace que de forma recursiva nos de la suma de todos lo elementos de la lista.
+Ahora, como se menciono con anterioridad, en la primera funcion (luhn) hacemos el modolu de luhnMult (c:cl) [] 1, esto equivale al resultado del luhnSuma, asi que solo no nos queda comprobar si el numero resultante es divisible entre 10. Usamos la funcion mod para esto y en caso de ser divisible devolvemos True, en cualquier otro caso regresamos False
+
+
+--CONJETURA DE COLLATZ
+
+
+3.EXPRESIONES ARITMÉTICAS
+
+--CREASUMAEA
+Primero revisamos si los dos valores dados por el usuario son ambos menores que 0. En caso de serlo llamamos a Suma 'EA' 'EA' sustituyendo ambos 'EA' con Negativo 'EA' y en ambos negativos intercalamos 'EA' por N Int que correponderan a los valores ingresados por el usuario(en este caso estaríamo definiendo la suma de dos enteros negativos). En caso de ambos números dados no sean menores que 0 se entra auna anidación de if. La primera condición será que si el primer número dado por el usuario es menor que 0 entonces se llamara a Suma 'EA' 'EA' sustituyendo el primer 'EA' por Negativo 'EA' y el segundo 'EA' N Int. En otra caso si el segundo número dado por el usuario es menor que 0 entonces se llamará a Suma con el primer 'EA' sustituido por N Int y el segundo por Negativo 'EA', si no se llama a Suma con ambos 'EA' sustituidos por N Int.
+
+--CREARESTAEA
+La explicaión es la misma que 'creasumaEA' con la diferencia de intercambiar la palabra 'suma' en toda la explicaci'on por la palabra 'resta'.
+
+--CREAMULTEA
+La explicaión es la misma que 'creasumaEA' con la diferencia de intercambiar la palabra 'suma' en toda la explicaci'on por la palabra 'multiplica'.
+
+--CREADIVEA
+La explicaión es la misma que 'creasumaEA' con la diferencia de intercambiar la palabra 'suma' en toda la explicaci'on por la palabra 'divide'.
+
+--CREAMODEA
+La explicaión es la misma que 'creasumaEA' con la diferencia de intercambiar la palabra 'suma' en toda la explicaci'on por la palabra 'mod'.
+
+--CREAPOTEA
+La explicaión es la misma que 'creasumaEA' con la diferencia de intercambiar la palabra 'suma' en toda la explicaci'on por la palabra 'potencia'.
+
+--INSTANCIA DE LA CLASE SHOW
+En esta parte establecemos lo que queremos que se imprima en la pantalla para los datos dados en el punto anterior. Para lograr esto definimos que queremos la expresión1 concatenada con el operador ya sea '+' , '-' , '*', '/', '%' y '^' (dependiendo de lo que estemos definiendo) a su vez concatenado con la expresión2.
+En el caso de 'Positivo e' solo definimos que queremos que se muestre 'e' , en el caso de 'Negativo e' nos devolverá un paréntesis '(' concatenado con el número ingresaso concateadono con otro paréntesis ')' y por último 'N Int' en el que solo nos aparecera 'n'.
+
+--MENORQUE
+
+--MAYORQUE

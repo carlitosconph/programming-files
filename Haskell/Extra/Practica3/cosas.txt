@@ -1,0 +1,40 @@
+anadirL :: Eq a => (a,a) -> [a]
+anadirL (c,d) = anadirLAux [] (c,d)
+
+anadirLAux :: Eq a => [a] -> (a,a) -> [a]
+anadirLAux ls (c,d) = (c:(d:ls))
+
+aplanaP :: Eq a => EList a -> [[a]]
+aplanaP l = map anadirL l
+
+
+concaL :: [[a]] -> [a]
+concaL [] = []
+concaL (c:cl)= c ++ (concaL(cl))
+
+
+
+
+
+--agregaL :: [[a]] -> [a]
+--agregaL [] = 
+--agregaL (c:cl) = agregaAux [] (c)
+
+--agregaAux :: [a] -> [a] -> [a]
+--agregaAux void [] = void
+--agregaAux void (c:cl) = agregaAux (c:void) (cl)
+
+
+
+
+
+
+
+--mueveE :: [[a]] -> [a]
+--mueveE (c:cl) = mueveAux [] (c:cl)
+
+--mueveAux :: [a] -> [[a]] -> [a]
+--mueveAux void [] = void
+--mueveAux void (c:cl) = (c ++ mueveE (cl))
+
+

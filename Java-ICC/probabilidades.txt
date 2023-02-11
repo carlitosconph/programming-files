@@ -1,0 +1,31 @@
+
+----------------------------------------------------------------
+EXTRA DESPUES, POSIBLEMENTE DE LOS ULTIMOS -> Las mujeres tienen 70 % de probabilidad de pedir crema para el caf ́e al pedir el men ́u 1 ----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+2/3(?) -> Las personas en rango de edad 5 a 17 tienen 40 % de probabilidad de elegir el men ́u 1, 5 % de probabilidad de
+elegir el men ́u 3 y 55 % de probabilidad de elegir el men ́u 2.
+Tambi ́en tienen el 80 % de probabilidad de ordenar una bebida adicional (la que sea, siempre y cuando sea de
+tama ̃no grande)
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+EXTRA DESPUES, CASI FINAL -> Todas las personas que ordenan caf ́e de manera adicional, sin importar si es chico, mediano o grande, siempre piden una pieza de pan dulce.
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------1(?) -> Las personas de talla XG siempre ordenan el men ́u 3 con todos los adicionales, siempre solicitan un t ́e del tama ̃no que sea, igualmente tienen 90 % de probabilidad de ordenar un s ́andwich extra y 70 % de probabilidad
+de ordenar las quesadillas.
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+2/3(?) -> Las personas de 60 a 99 a ̃nos, de talla CH tienen el 75 % de ordenar el men ́u 2 y 60 % de pedir fruta adicional en su plato de avena. Nunca piden ning ́un extra, ni siquiera cuando ordenan el men ́u 1 o 3. Excepto si son mujeres (Ver el punto 1) en ese caso, s ́ı pueden ordenar crema para el caf ́e.
+(solo falta preguntar por el 25% restante)
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+3/4(?) -> Siempre que un hombre de 30 a 40 a ̃nos de edad y talla G, ordena el men ́u 3, hay un 90 % de probabilidad de que ordene tres piezas de pan dulce y 2 sobres de crema para caf ́e siempre y cuando haya elegido el caf ́e como bebida de su men ́u.----------------------------------------------------------------
